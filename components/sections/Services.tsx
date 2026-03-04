@@ -1,7 +1,6 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import Image from 'next/image';
 import type { ServicesProps } from '@/types/sections';
 
 const TICKER_TEXT = '◆ SHOWROOM ◆ ';
@@ -34,154 +33,73 @@ export default function Services({ visibleSections }: ServicesProps) {
         </div>
       </div>
 
-      {/* Video 1 - Main showcase with statement overlay */}
-      <div className="relative w-full aspect-video max-h-[75vh] bg-black overflow-hidden">
-        <video
-          src="/media/services-video.mp4"
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute inset-0 flex items-center justify-center p-8 pointer-events-none"
-          style={{ mixBlendMode: 'overlay' as React.CSSProperties['mixBlendMode'] }}
-        >
-          <p
-            className="text-white font-black text-center leading-tight"
-            style={{
-              fontSize: 'clamp(2.5rem, 5vw, 6.5rem)',
-              textShadow: '0 0 40px rgba(0,0,0,0.5)',
-            }}
-          >
-            {t('statement1')}
-          </p>
-        </div>
-        <div className="absolute bottom-4 left-4 text-[10px] md:text-xs text-white/50 tracking-widest uppercase">
-          {t('meta1')}
-        </div>
-        <div className="absolute bottom-4 right-4 text-[10px] md:text-xs text-[#ff7300] tracking-widest">
-          {t('tags1')}
-        </div>
-      </div>
-
-      {/* Video 2 - Fantasy/Scifi */}
-      <div className="relative w-full aspect-video max-h-[75vh] bg-black overflow-hidden">
-        <video
-          src="/media/services-video2.mp4"
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute inset-0 flex items-center justify-center p-8 pointer-events-none"
-          style={{ mixBlendMode: 'overlay' as React.CSSProperties['mixBlendMode'] }}
-        >
-          <p
-            className="text-white font-black text-center leading-tight"
-            style={{
-              fontSize: 'clamp(2.5rem, 5vw, 6.5rem)',
-              textShadow: '0 0 40px rgba(0,0,0,0.5)',
-            }}
-          >
-            {t('statement2')}
-          </p>
-        </div>
-        <div className="absolute bottom-4 left-4 text-[10px] md:text-xs text-white/50 tracking-widest uppercase">
-          {t('meta2')}
-        </div>
-        <div className="absolute bottom-4 right-4 text-[10px] md:text-xs text-[#ff7300] tracking-widest">
-          {t('tags2')}
-        </div>
-      </div>
-
-      {/* Video 3 - Forest / Brand Personas */}
-      <div className="relative w-full aspect-video max-h-[75vh] bg-black overflow-hidden">
-        <video
-          src="/media/services-video3.mp4"
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute inset-0 flex items-center justify-center p-8 pointer-events-none"
-          style={{ mixBlendMode: 'overlay' as React.CSSProperties['mixBlendMode'] }}
-        >
-          <p
-            className="text-white font-black text-center leading-tight"
-            style={{
-              fontSize: 'clamp(2.5rem, 5vw, 6.5rem)',
-              textShadow: '0 0 40px rgba(0,0,0,0.5)',
-            }}
-          >
-            {t('statement3')}
-          </p>
-        </div>
-        <div className="absolute bottom-4 left-4 text-[10px] md:text-xs text-white/50 tracking-widest uppercase">
-          {t('meta3')}
-        </div>
-        <div className="absolute bottom-4 right-4 text-[10px] md:text-xs text-[#ff7300] tracking-widest">
-          {t('tags3')}
-        </div>
-      </div>
-
-      {/* Image + MODULE list row */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-0">
-        <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[400px] bg-neutral-900">
-          <Image
-            src="/media/services-img.png"
-            alt="Services showcase"
-            fill
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
-        </div>
-        <div className="flex flex-col justify-center px-8 py-12 lg:py-16 border-t lg:border-t-0 lg:border-l border-white/10">
-          {[1, 2, 3].map((i) => (
+      {/* Shows / Modules mapped together */}
+      {[1, 2, 3].map((i) => (
+        <div key={i} className="border-b border-white/10 last:border-b-0">
+          {/* Video */}
+          <div className="relative w-full aspect-video max-h-[75vh] bg-black overflow-hidden">
+            <video
+              src={`/media/services-video${i === 1 ? '' : i}.mp4`}
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
             <div
-              key={i}
-              className={`py-6 border-b border-white/10 last:border-b-0 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-              style={{ transitionDelay: `${200 + i * 150}ms` }}
+              className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-0 flex items-center justify-center p-8 pointer-events-none"
+              style={{ mixBlendMode: 'overlay' as React.CSSProperties['mixBlendMode'] }}
             >
-              <span className="text-[10px] md:text-xs text-[#ff7300] tracking-[0.2em] uppercase font-semibold">
-                {t('moduleLabel')} — B.0{i} / {t(`service${i}.title`).toUpperCase()}
-              </span>
-              <p className="text-white/90 mt-2 text-sm md:text-base leading-relaxed max-w-xl">
-                {t(`service${i}.description`)}
+              <p
+                className="text-white font-black text-center leading-tight"
+                style={{
+                  fontSize: 'clamp(2.5rem, 5vw, 6.5rem)',
+                  textShadow: '0 0 40px rgba(0,0,0,0.5)',
+                }}
+              >
+                {t(`statement${i}`)}
               </p>
-              <div className="flex flex-wrap gap-2 mt-3">
+            </div>
+            <div className="absolute bottom-4 left-4 text-[10px] md:text-xs text-white/50 tracking-widest uppercase">
+              {t(`meta${i}`)}
+            </div>
+            <div className="absolute bottom-4 right-4 text-[10px] md:text-xs text-[#ff7300] tracking-widest">
+              {t(`tags${i}`)}
+            </div>
+          </div>
+
+          {/* Module Text (Vertical Editorial Style) */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-12 py-12 md:py-20 max-w-[1600px] mx-auto">
+            <div className="md:col-span-4 lg:col-span-4">
+              <span className="text-[10px] md:text-xs text-[#ff7300] tracking-[0.2em] uppercase font-semibold">
+                {t('moduleLabel')} — B.0{i}
+              </span>
+              <h3 className="text-xl md:text-2xl font-bold text-white mt-2 mb-6">
+                {t(`service${i}.title`).toUpperCase()}
+              </h3>
+              <div className="flex flex-wrap gap-2">
                 {t(`service${i}.tags`).split(' · ').map((tag) => (
                   <span
                     key={tag}
-                    className="text-[10px] px-3 py-1 border border-white/30 text-white/70 uppercase tracking-wider"
+                    className="text-[9px] px-3 py-1 border border-white/20 text-white/50 uppercase tracking-wider"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
-          ))}
+            <div className="md:col-span-8 lg:col-span-7 lg:col-start-6 flex items-center">
+              <p className="text-white/80 text-lg md:text-xl lg:text-2xl font-light leading-relaxed">
+                {t(`service${i}.description`)}
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      ))}
 
     </section>
   );

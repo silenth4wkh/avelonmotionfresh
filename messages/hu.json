@@ -94,7 +94,8 @@
     "label": "Munkáink",
     "headline": "KIVÁLASZTOTT MUNKÁK",
     "subheadline": "Válogatott munkáink — filmes AI tartalom minden formátumban, szociál médiától a branding kampányokig.",
-    "bodyText": "Minden képkocka szándékos. Minden formátum lehetőség. Az AI-alapú produkciót emberi irányítással párosítjuk: skálázható munka, kompromisszum nélkül.",
+    "bodyText": "Minden képkocka szándékos. Minden formátum lehetőség.",
+    "bodyTextBold": "Az AI-alapú produkciót emberi irányítással párosítjuk: skálázható munka, kompromisszum nélkül.",
     "project1": {
       "title": "Social Media — UGC",
       "category": "Szociál",
@@ -128,23 +129,31 @@
   },
   "process": {
     "label": "Folyamatunk",
+    "meta": "IDX/AM — CAT — 2.01 — FOLYAMAT",
     "headline": "HOGYAN DOLGOZUNK",
     "subheadline": "Egy finomhangolt folyamat: kutatás, koncepcióalkotás, AI-generált képalkotás, irányított mozgás, gondos befejezés – minden részlet kattanva a helyére.",
+    "statementLine1": "Rend és iteráció.",
+    "statementLine2": "Minden fázis az előzőre épül—koncepció, alkotás, finomítás, szállítás.",
+    "moduleLabel": "MODUL",
     "step1": {
-      "title": "Koncepció és stratégia",
-      "description": "Mélyen belemerülünk a márkád történetébe, kreatív víziójába és céljaidba. Együtt határozzuk meg a narratívát, a stílusdirektívát és azt, hogyan erősíti az AI az üzeneted."
+      "title": "Koncepció & Stratégia",
+      "highlight": "MÁRKATÖRTÉNET, KREATÍV VÍZIÓ,",
+      "rest": "ÉS CÉLOK. MEGHATÁROZZUK A NARRATÍVÁT, A STÍLUST ÉS AZT, HOGYAN ERŐSÍTI AZ AI AZ ÜZENETED."
     },
     "step2": {
-      "title": "AI-generálás és vizuális fejlesztés",
-      "description": "AI-eszközeink kezdeti vizuális koncepciókat, stíluskereteket és mozgási irányokat generálnak. Gyorsan iterálunk, finomítjuk az esztétikát, amíg tökéletesen megragadja a márkád hangját."
+      "title": "AI Generálás",
+      "highlight": "VIZUÁLIS KONCEPCIÓK, STÍLUSKERETEK,",
+      "rest": "ÉS MOZGÁSI IRÁNYOK. GYORSAN ITERÁLUNK, AMÍG TÖKÉLETESEN MEGRAGADJA A MÁRKÁD HANGJÁT."
     },
     "step3": {
-      "title": "Gyártás és finomítás",
-      "description": "Összeállítjuk a videónarrátívát, filmes mozgást adunk hozzá, és ott emeljük AI-vel, ahol az valóban emeli a történetet. Minden képkockát úgy alkotunk, hogy elkötelezzen és inspiráljon."
+      "title": "Gyártás & Finomítás",
+      "highlight": "FILMES MOZGÁS, AI KIEMELÉS,",
+      "rest": "MINDEN KÉPKOCKA ELKÖTELEZVÉN. ÖSSZEÁLLÍTJUK A NARRATÍVÁT ÉS FINOMÍTJUK, AMÍG TÖKÉLETES."
     },
     "step4": {
-      "title": "Szállítás és optimalizálás",
-      "description": "Végső renderek több formátumban a webre, közösségi médiára és adásra. Teljesítményre optimalizálunk, és gondoskodunk arról, hogy tartalmad mindenhol lenyűgöző legyen."
+      "title": "Szállítás & Optimalizálás",
+      "highlight": "TÖBB FORMÁTUM, MINDEN PLATFORM,",
+      "rest": "TELJESÍTMÉNYRE OPTIMALIZÁLVA. VÉGSŐ RENDEREK WEBHEZ, KÖZÖSSÉGI MÉDIÁHOZ ÉS ADÁSHOZ."
     },
     "ctaLabel": "Konzultáció időpont"
   },

@@ -94,7 +94,8 @@
     "label": "Selected Work",
     "headline": "SELECTED WORK",
     "subheadline": "A curated look at what we build—cinematic AI content across every format, from social to brand.",
-    "bodyText": "Every frame intentional. Every format an opportunity. We blend AI-driven production with human direction to deliver work that scales without sacrificing craft.",
+    "bodyText": "Every frame intentional. Every format an opportunity.",
+    "bodyTextBold": "We blend AI-driven production with human direction to deliver work that scales without sacrificing craft.",
     "project1": {
       "title": "Social Media — UGC",
       "category": "Social",
@@ -128,23 +129,31 @@
   },
   "process": {
     "label": "How We Work",
+    "meta": "IDX/AM — CAT — 2.01 — PROCESS",
     "headline": "HOW WE WORK",
     "subheadline": "A tuned sequence: research, concept, AI-generated imagery, directed motion, careful finishing—every detail clicking into place.",
+    "statementLine1": "Order and iteration.",
+    "statementLine2": "Each phase builds on the last—concept, creation, refinement, delivery.",
+    "moduleLabel": "MODULE",
     "step1": {
       "title": "Concept & Strategy",
-      "description": "We dive deep into your brand story, creative vision, and goals. Together we define the narrative, style direction, and how AI will amplify your message."
+      "highlight": "BRAND STORY, CREATIVE VISION,",
+      "rest": "AND GOALS. WE DEFINE THE NARRATIVE, STYLE DIRECTION, AND HOW AI WILL AMPLIFY YOUR MESSAGE."
     },
     "step2": {
-      "title": "AI Generation & Visual Development",
-      "description": "Our AI tools generate initial visual concepts, style frames, and motion directions. We iterate rapidly, refining the aesthetic until it perfectly captures your brand voice."
+      "title": "AI Generation",
+      "highlight": "VISUAL CONCEPTS, STYLE FRAMES,",
+      "rest": "AND MOTION DIRECTIONS. WE ITERATE RAPIDLY UNTIL IT PERFECTLY CAPTURES YOUR BRAND VOICE."
     },
     "step3": {
       "title": "Production & Refinement",
-      "description": "We assemble the video narrative, add cinematic motion, and enhance with AI where it elevates the story. Every frame is crafted to engage and inspire."
+      "highlight": "CINEMATIC MOTION, AI ENHANCEMENT,",
+      "rest": "EVERY FRAME CRAFTED TO ENGAGE. WE ASSEMBLE THE NARRATIVE AND REFINE UNTIL IT SINGS."
     },
     "step4": {
       "title": "Delivery & Optimization",
-      "description": "Final renders in multiple formats for web, social, and broadcast. We optimize for performance and ensure your content looks stunning everywhere it lives."
+      "highlight": "MULTIPLE FORMATS, EVERY PLATFORM,",
+      "rest": "OPTIMIZED FOR PERFORMANCE. FINAL RENDERS FOR WEB, SOCIAL, AND BROADCAST. READY TO LAUNCH."
     },
     "ctaLabel": "Schedule a consultation"
   },
