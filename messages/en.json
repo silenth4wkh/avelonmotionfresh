@@ -1,0 +1,285 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Our Story",
+    "services": "Services",
+    "process": "How We Work",
+    "work": "Portfolio",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "brand": {
+    "tagline": "AI Video Production",
+    "description": "Cinematic AI-powered video production for modern brands"
+  },
+  "hero": {
+    "explore": "explore",
+    "brandAbbrev": "AM",
+    "verticalLabel": "AVELON",
+    "line1": "We craft ideas",
+    "line2": "into CINEMATIC",
+    "line3": "AI films.",
+    "title": "AVELON MOTION",
+    "subtitle": "AI VIDEO PRODUCTION STUDIO",
+    "phase1": "PHASE/CONCEPT",
+    "phase2": "PHASE/BUILD",
+    "phase3": "PHASE/BEND",
+    "phase4": "PHASE/RELEASE",
+    "idxLabel": "IDX/AM",
+    "year": "2026",
+    "cat1": "AI VIDEO PRODUCTION",
+    "cat2": "MOTION DESIGN",
+    "cat3": "BRAND SYSTEMS",
+    "cat4": "AI PERSONAS",
+    "primaryCta": "Start Your Project",
+    "viewWork": "See Our Work",
+    "loading": "Loading...",
+    "stat1Value": "10×",
+    "stat1Label": "Faster Production",
+    "stat2Value": "50+",
+    "stat2Label": "Projects Delivered",
+    "stat3Value": "100%",
+    "stat3Label": "Brand Ownership"
+  },
+  "about": {
+    "label": "Our Story",
+    "meta": "IDX / AM — CAT — 1.01 — OUR STORY",
+    "headline": "Pixels with purpose.",
+    "description": "Avelon Motion combines cutting-edge AI technology with human creativity to build visual systems that adapt, evolve, and stay true to your brand's unique voice. We're designers and technologists who craft scalable content solutions without compromising on quality or artistry.",
+    "feature1": {
+      "title": "AI-Powered Production",
+      "description": "Cutting-edge artificial intelligence that enhances creativity without replacing human artistry."
+    },
+    "feature2": {
+      "title": "Scalable Solutions",
+      "description": "Visual systems that grow with your brand and adapt to your evolving needs."
+    },
+    "feature3": {
+      "title": "Immersive Experiences",
+      "description": "Digital content that blurs the line between reality and imagination."
+    },
+    "quote": "We don't replace creativity. We accelerate it."
+  },
+  "services": {
+    "label": "What We Do",
+    "headline": "Services Built for Modern Brands",
+    "subheadline": "Cutting-edge solutions that transform your brand vision into reality.",
+    "statement1": "CUTTING-EDGE SOLUTIONS THAT TRANSFORM YOUR BRAND VISION INTO REALITY.",
+    "statement2": "WE COMBINE AI-POWERED PRODUCTION WITH HUMAN CREATIVITY—FASTER DELIVERY, FULL BRAND OWNERSHIP.",
+    "statement3": "[ BRAND PERSONAS ]",
+    "meta1": "2025 / 2026 · AM — SVC.001 · MOTION SHOWCASE",
+    "meta2": "AM — SVC.002 · VISUAL SYSTEMS",
+    "meta3": "AM — SVC.003 · BRAND PERSONAS",
+    "tags1": "AI VIDEO · CONCEPT / MOTION · ART DIRECTION",
+    "tags2": "VISUAL IDENTITY / AI",
+    "tags3": "BRAND PERSONAS / AI",
+    "moduleLabel": "MODULE",
+    "service1": {
+      "title": "Cinematic AI Films",
+      "description": "We turn brand ideas into high-impact video content. From concept to delivery, we create compelling visual stories that engage your audience and scale with your needs.",
+      "tags": "UGC Content · Product Showcase · Marketing Campaign"
+    },
+    "service2": {
+      "title": "Dynamic Visual Systems",
+      "description": "Create dynamic visual systems that adapt to your brand needs. Our AI-powered design tools generate unique, scalable assets that grow with your business.",
+      "tags": "Brand Assets · Motion Design · Visual Identity"
+    },
+    "service3": {
+      "title": "AI-Generated Brand Personas",
+      "description": "Bring your brand to life with custom digital personalities. Create memorable interactions that build emotional connections with your customers.",
+      "tags": "Digital Avatars · Content Creation · Brand Voice"
+    }
+  },
+  "work": {
+    "label": "Selected Work",
+    "headline": "SELECTED WORK",
+    "subheadline": "A curated look at what we build—cinematic AI content across every format, from social to brand.",
+    "bodyText": "Every frame intentional. Every format an opportunity. We blend AI-driven production with human direction to deliver work that scales without sacrificing craft.",
+    "project1": {
+      "title": "Social Media — UGC",
+      "category": "Social",
+      "result": "Authentic creator-style content, produced at scale with AI direction and rapid turnaround."
+    },
+    "project2": {
+      "title": "AI Video Production — Short Films",
+      "category": "AI Video",
+      "result": "Narrative-driven AI short films for brand storytelling, festival submissions, and campaign launches."
+    },
+    "project3": {
+      "title": "Marketing — Production",
+      "category": "Marketing",
+      "result": "Full-cycle production for product launches, performance campaigns, and multi-channel rollouts."
+    },
+    "project4": {
+      "title": "AI Animation — 3D",
+      "category": "Animation",
+      "result": "AI-assisted 3D animation for product visualization, explainers, and motion brand assets."
+    },
+    "project5": {
+      "title": "AI Photography — Brand",
+      "category": "Photography",
+      "result": "Photorealistic AI-generated brand imagery—consistent, ownable, and produced without a studio shoot."
+    },
+    "project6": {
+      "title": "Brand Identity — Motion",
+      "category": "Branding",
+      "result": "Full motion brand systems—logo animations, reels, and dynamic assets built for digital-first presentation."
+    }
+  },
+  "process": {
+    "label": "How We Work",
+    "headline": "HOW WE WORK",
+    "subheadline": "A tuned sequence: research, concept, AI-generated imagery, directed motion, careful finishing—every detail clicking into place.",
+    "step1": {
+      "title": "Concept & Strategy",
+      "description": "We dive deep into your brand story, creative vision, and goals. Together we define the narrative, style direction, and how AI will amplify your message."
+    },
+    "step2": {
+      "title": "AI Generation & Visual Development",
+      "description": "Our AI tools generate initial visual concepts, style frames, and motion directions. We iterate rapidly, refining the aesthetic until it perfectly captures your brand voice."
+    },
+    "step3": {
+      "title": "Production & Refinement",
+      "description": "We assemble the video narrative, add cinematic motion, and enhance with AI where it elevates the story. Every frame is crafted to engage and inspire."
+    },
+    "step4": {
+      "title": "Delivery & Optimization",
+      "description": "Final renders in multiple formats for web, social, and broadcast. We optimize for performance and ensure your content looks stunning everywhere it lives."
+    },
+    "ctaLabel": "Schedule a consultation"
+  },
+  "faq": {
+    "label": "FAQ",
+    "headline": "Frequently Asked Questions",
+    "q1": {
+      "question": "What is AI video production, and how does it work?",
+      "answer": "AI video production combines cutting-edge artificial intelligence with cinematic storytelling. We use AI to enhance creativity, streamline production workflows, and create scalable visual content that maintains artistic quality."
+    },
+    "q2": {
+      "question": "What input materials do you need to start a project?",
+      "answer": "We typically work with your brand guidelines, moodboards, scripts, or even just a concept. Our AI-powered tools can generate initial visuals from brand descriptions."
+    },
+    "q3": {
+      "question": "How long does a typical AI video project take?",
+      "answer": "Most AI video productions range from 2-6 weeks. This includes concept development, AI generation, refinement, and final delivery."
+    },
+    "q4": {
+      "question": "What deliverables are included in a project?",
+      "answer": "You'll receive the final video files in multiple formats (web, social media, broadcast-ready), source assets, brand guidelines if created, and usage rights."
+    },
+    "q5": {
+      "question": "Who owns the rights to the final videos and brand assets?",
+      "answer": "Upon final payment, you own all rights to the deliverables. You can use the content across all your marketing channels and modify it as needed."
+    },
+    "q6": {
+      "question": "Can you work with our existing brand style or create something completely new?",
+      "answer": "Absolutely. We can perfectly match your existing brand guidelines or create an entirely new visual identity."
+    },
+    "q7": {
+      "question": "How is pricing structured for AI video projects?",
+      "answer": "Our pricing is project-based and varies depending on scope, complexity, and deliverables. Contact us for a personalized proposal."
+    },
+    "q8": {
+      "question": "Do you provide ongoing support after project completion?",
+      "answer": "Yes. We offer post-project support packages for clients who need ongoing updates, additional variations, or asset modifications."
+    }
+  },
+  "cta": {
+    "label": "Contact Us",
+    "headline": "Got a project in mind?",
+    "brandName": "Avelon Motion",
+    "headingBold": "Got",
+    "headingLight": "a project in mind?",
+    "description": "Tell us about your project—whether it's an AI video, brand story, or campaign. We'd love to help you bring it to life.",
+    "benefit1": {
+      "title": "Quick response",
+      "description": "If you're ready to create and collaborate, we'd love to hear from you."
+    },
+    "benefit2": {
+      "title": "Clear next steps",
+      "description": "After the consultation, we'll provide you with a detailed plan and timeline."
+    },
+    "quickResponse": {
+      "title": "Quick response",
+      "description": "If you're ready to create and collaborate, we'd love to hear from you."
+    },
+    "clearSteps": {
+      "title": "Clear next steps",
+      "description": "After the consultation, we'll provide you with a detailed plan and timeline."
+    },
+    "contactLabel": "Or reach us directly at",
+    "rightHeading": "Let's talk",
+    "rightDescription": "Tell us about your project—whether it's an AI video, brand story, or campaign. We'd love to help you bring it to life.",
+    "namePlaceholder": "John Doe",
+    "emailPlaceholder": "info@example.com",
+    "messagePlaceholder": "Your message",
+    "successMessage": "Thank you! We'll contact you within 24 hours.",
+    "errorMessage": "Something went wrong. Please try again.",
+    "buttonLoading": "Sending...",
+    "buttonSuccess": "Message Sent!",
+    "buttonText": "Send Message",
+    "legal": "I agree to the",
+    "privacyPolicy": "Privacy Policy",
+    "form": {
+      "nameLabel": "Your name",
+      "emailLabel": "E-mail",
+      "messageLabel": "Message",
+      "submitLabel": "Send Message",
+      "sending": "Sending...",
+      "successTitle": "Message Sent!",
+      "successMessage": "Thank you! We'll contact you within 24 hours.",
+      "errorMessage": "Something went wrong. Please try again.",
+      "privacyText": "I agree to the Privacy Policy and consent to Avelon Motion contacting me about my inquiry.",
+      "privacyRequired": "Please accept the privacy policy to continue.",
+      "rateLimited": "Too many attempts. Please try again in",
+      "minutes": "minutes."
+    }
+  },
+  "footer": {
+    "tagline": "Leading AI video production studio creating immersive digital experiences that push the boundaries of creativity and technology.",
+    "servicesLabel": "Services",
+    "companyLabel": "Company",
+    "links": {
+      "service1": "AI Video Production",
+      "service2": "Visual Design",
+      "service3": "Digital Experience",
+      "service4": "Brand Identity",
+      "about": "About Us",
+      "process": "Our Process",
+      "work": "Portfolio",
+      "contact": "Contact",
+      "privacy": "Privacy Policy"
+    },
+    "copyright": "© {year} Avelon Motion. All rights reserved.",
+    "madeWith": "Made with AI & passion.",
+    "followUs": "Follow us"
+  },
+  "cookies": {
+    "title": "Cookie Settings",
+    "description": "We use cookies to improve your experience. You can choose which types of cookies you accept.",
+    "learnMore": "Learn more in our Privacy Policy",
+    "acceptAll": "Accept All",
+    "rejectOptional": "Reject Optional",
+    "settings": "Settings",
+    "saveSettings": "Save Settings",
+    "back": "Back",
+    "essential": "Essential Cookies",
+    "essentialDesc": "Required for the website to function properly.",
+    "analytics": "Analytics Cookies",
+    "analyticsDesc": "Help us understand how visitors interact with the site.",
+    "marketing": "Marketing Cookies",
+    "marketingDesc": "Used to serve relevant ads and track campaign effectiveness.",
+    "required": "Required"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "backHome": "Back to Home"
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "nav": {
+    "home": "Főoldal",
+    "about": "Rólunk",
+    "services": "Szolgáltatások",
+    "process": "Folyamatunk",
+    "work": "Portfólió",
+    "faq": "GYIK",
+    "contact": "Kapcsolat"
+  },
+  "brand": {
+    "tagline": "AI Videógyártás",
+    "description": "Mozgóképes AI-alapú videógyártás modern márkáknak"
+  },
+  "hero": {
+    "explore": "fedezd fel",
+    "brandAbbrev": "AM",
+    "verticalLabel": "AVELON",
+    "line1": "Ötleteket alakítunk",
+    "line2": "FILMES",
+    "line3": "AI-alkotásokká.",
+    "title": "AVELON MOTION",
+    "subtitle": "AI VIDEÓGYÁRTÓ STÚDIÓ",
+    "phase1": "FÁZIS/KONCEPCIÓ",
+    "phase2": "FÁZIS/GYÁRTÁS",
+    "phase3": "FÁZIS/FINOMÍTÁS",
+    "phase4": "FÁZIS/SZÁLLÍTÁS",
+    "idxLabel": "IDX/AM",
+    "year": "2026",
+    "cat1": "AI VIDEÓGYÁRTÁS",
+    "cat2": "MOZGÓKÉP DESIGN",
+    "cat3": "MÁRKA RENDSZEREK",
+    "cat4": "AI SZEMÉLYISÉGEK",
+    "primaryCta": "Indíts Projektet",
+    "viewWork": "Munkáink",
+    "loading": "Betöltés...",
+    "stat1Value": "10×",
+    "stat1Label": "Gyorsabb Gyártás",
+    "stat2Value": "50+",
+    "stat2Label": "Leszállított Projekt",
+    "stat3Value": "100%",
+    "stat3Label": "Márka Tulajdon"
+  },
+  "about": {
+    "label": "Rólunk",
+    "meta": "IDX / AM — CAT — 1.01 — RÓLUNK",
+    "headline": "Értelem minden képkockában.",
+    "description": "Az Avelon Motion élvonalbeli AI-technológiát egyesít emberi kreativitással, hogy olyan vizuális rendszereket hozzon létre, amelyek alkalmazkodnak, fejlődnek és hűek maradnak a te márkád egyedi hangjához. Dizájnerek és technológusok vagyunk, akik skálázható tartalommegoldásokat alkotnak, sosem feláldozva a minőséget vagy a művésziséget.",
+    "feature1": {
+      "title": "AI-alapú gyártás",
+      "description": "Élvonalbeli mesterséges intelligencia, amely fokozza a kreativitást anélkül, hogy helyettesítené az emberi kézjegyet."
+    },
+    "feature2": {
+      "title": "Skálázható megoldások",
+      "description": "Vizuális rendszerek, amelyek növekednek a márkáddal és alkalmazkodnak a változó igényeidhez."
+    },
+    "feature3": {
+      "title": "Magával ragadó élmények",
+      "description": "Digitális tartalom, amely elmossa a határt a valóság és a képzelet között."
+    },
+    "quote": "Nem helyettesítjük a kreativitást. Felgyorsítjuk."
+  },
+  "services": {
+    "label": "Amit kínálunk",
+    "headline": "Modern márkákra szabott szolgáltatások",
+    "subheadline": "Élvonalbeli megoldások, amelyek valósággá változtatják a márkádat.",
+    "statement1": "ÉLVONALBELI MEGOLDÁSOK, AMELYEK VALÓSÁGGÁ VÁLTOZTATJÁK A MÁRKÁDAT.",
+    "statement2": "AI-ALAPÚ PRODUKCIÓT PÁROSÍTUNK EMBERI KREATIVITÁSSAL — GYORSABB SZÁLLÍTÁS, TELJES MÁRKA TULAJDON.",
+    "statement3": "[ BRAND PERSONAS ]",
+    "meta1": "2025 / 2026 · AM — SVC.001 · MOTION SHOWCASE",
+    "meta2": "AM — SVC.002 · VISUAL SYSTEMS",
+    "meta3": "AM — SVC.003 · BRAND PERSONAS",
+    "tags1": "AI VIDEÓ · KONCEPCIÓ / MOZGÁS · MŰVÉSZETI IRÁNY",
+    "tags2": "VIZUÁLIS IDENTITÁS / AI",
+    "tags3": "BRAND PERSONAS / AI",
+    "moduleLabel": "MODUL",
+    "service1": {
+      "title": "Filmes AI-alkotások",
+      "description": "Márkaötleteket hatékony videótartalommé alakítunk. Koncepciótól szállításig kényszerítő erejű vizuális történeteket alkotunk, amelyek skálázhatóak.",
+      "tags": "UGC tartalom · Termékbemutató · Marketing kampány"
+    },
+    "service2": {
+      "title": "Dinamikus vizuális rendszerek",
+      "description": "Hozz létre dinamikus vizuális rendszereket, amelyek alkalmazkodnak a márkád igényeihez. AI-alapú tervezőeszközeink egyedi, skálázható elemeket generálnak.",
+      "tags": "Márkaelemek · Motion design · Vizuális identitás"
+    },
+    "service3": {
+      "title": "AI-generált márkaperszonák",
+      "description": "Keltsd életre márkádat egyedi digitális személyiségekkel. Emlékezetes interakciókat hozz létre, amelyek érzelmi kapcsolatot teremtenek ügyfeleidddel.",
+      "tags": "Digitális avatárok · Tartalomkészítés · Márkahang"
+    }
+  },
+  "work": {
+    "label": "Munkáink",
+    "headline": "KIVÁLASZTOTT MUNKÁK",
+    "subheadline": "Válogatott munkáink — filmes AI tartalom minden formátumban, szociál médiától a branding kampányokig.",
+    "bodyText": "Minden képkocka szándékos. Minden formátum lehetőség. Az AI-alapú produkciót emberi irányítással párosítjuk: skálázható munka, kompromisszum nélkül.",
+    "project1": {
+      "title": "Social Media — UGC",
+      "category": "Szociál",
+      "result": "Autentikus creator-stílusú tartalom, AI irányítással és gyors átadással, nagy mennyiségben."
+    },
+    "project2": {
+      "title": "AI Videógyártás — Rövidfilmek",
+      "category": "AI Videó",
+      "result": "Narratíva-alapú AI rövidfilmek márkatörténetmeséléshez, kampányindításhoz és fesztiváli megjelenéshez."
+    },
+    "project3": {
+      "title": "Marketing — Produkció",
+      "category": "Marketing",
+      "result": "Teljes körű produkció termékindításokhoz, performance kampányokhoz és többcsatornás megjelenésekhez."
+    },
+    "project4": {
+      "title": "AI Animáció — 3D",
+      "category": "Animáció",
+      "result": "AI-asszisztált 3D animáció termékbemutatóhoz, magyarázóvideókhoz és motion brandelementekhez."
+    },
+    "project5": {
+      "title": "AI Fotográfia — Brand",
+      "category": "Fotográfia",
+      "result": "Fotorealisztikus AI-generált márkaképek — konzisztens, saját tulajdon, stúdiófotózás nélkül."
+    },
+    "project6": {
+      "title": "Brand Identity — Motion",
+      "category": "Branding",
+      "result": "Teljes motion brand rendszerek — logóanimációk, reelok és dinamikus eszközök digitális megjelenéshez."
+    }
+  },
+  "process": {
+    "label": "Folyamatunk",
+    "headline": "HOGYAN DOLGOZUNK",
+    "subheadline": "Egy finomhangolt folyamat: kutatás, koncepcióalkotás, AI-generált képalkotás, irányított mozgás, gondos befejezés – minden részlet kattanva a helyére.",
+    "step1": {
+      "title": "Koncepció és stratégia",
+      "description": "Mélyen belemerülünk a márkád történetébe, kreatív víziójába és céljaidba. Együtt határozzuk meg a narratívát, a stílusdirektívát és azt, hogyan erősíti az AI az üzeneted."
+    },
+    "step2": {
+      "title": "AI-generálás és vizuális fejlesztés",
+      "description": "AI-eszközeink kezdeti vizuális koncepciókat, stíluskereteket és mozgási irányokat generálnak. Gyorsan iterálunk, finomítjuk az esztétikát, amíg tökéletesen megragadja a márkád hangját."
+    },
+    "step3": {
+      "title": "Gyártás és finomítás",
+      "description": "Összeállítjuk a videónarrátívát, filmes mozgást adunk hozzá, és ott emeljük AI-vel, ahol az valóban emeli a történetet. Minden képkockát úgy alkotunk, hogy elkötelezzen és inspiráljon."
+    },
+    "step4": {
+      "title": "Szállítás és optimalizálás",
+      "description": "Végső renderek több formátumban a webre, közösségi médiára és adásra. Teljesítményre optimalizálunk, és gondoskodunk arról, hogy tartalmad mindenhol lenyűgöző legyen."
+    },
+    "ctaLabel": "Konzultáció időpont"
+  },
+  "faq": {
+    "label": "GYIK",
+    "headline": "Gyakran Ismételt Kérdések",
+    "q1": {
+      "question": "Mi az AI-videógyártás, és hogyan működik?",
+      "answer": "Az AI-videógyártás élvonalbeli mesterséges intelligenciát ötvöz filmes történetmesélésekkel. Az AI-t a kreativitás fokozására, a gyártási munkafolyamatok egyszerűsítésére és skálázható vizuális tartalom létrehozására használjuk, megőrizve a művészi minőséget."
+    },
+    "q2": {
+      "question": "Milyen anyagokra van szükség egy projekt indításához?",
+      "answer": "Általában márkairányelvekkel, hangulattáblákkal, szkriptekkel vagy akár csak egy koncepcióval dolgozunk. AI-alapú eszközeink képesek kezdeti vizuálisakat generálni márkaleírásokból."
+    },
+    "q3": {
+      "question": "Mennyi ideig tart egy tipikus AI-videó projekt?",
+      "answer": "A legtöbb AI-videógyártás 2-6 hétig tart. Ez magában foglalja a koncepciófejlesztést, az AI-generálást, a finomítást és a végső szállítást."
+    },
+    "q4": {
+      "question": "Milyen anyagokat kapok a projekt végén?",
+      "answer": "Megkapod a végső videófájlokat több formátumban (web, közösségi média, adáskész), a forrásanyagokat, ha készültek, márkairányelveket és a felhasználási jogokat."
+    },
+    "q5": {
+      "question": "Ki a tulajdonosa a végső videóknak és márkaanyagoknak?",
+      "answer": "A végső fizetéskor te szerzel minden jogot a szállítmányokhoz. Az összes marketing-csatornádon felhasználhatod a tartalmat, és szükség szerint módosíthatod."
+    },
+    "q6": {
+      "question": "Dolgozhattok a meglévő márkastílusommal, vagy teljesen újat hoztok létre?",
+      "answer": "Természetesen. Tökéletesen illeszkedünk a meglévő márkairányelveidhez, vagy teljesen új vizuális identitást hozunk létre."
+    },
+    "q7": {
+      "question": "Hogyan épül fel az AI-videó projektek árazása?",
+      "answer": "Az árazásunk projektalapon történik, és a hatókörtől, összetettségtől és a szállítmányoktól függően változik. Lépj velünk kapcsolatba személyre szabott ajánlatért."
+    },
+    "q8": {
+      "question": "Nyújtotok folyamatos támogatást a projekt befejezése után?",
+      "answer": "Igen. Post-projekt támogatási csomagokat kínálunk azoknak az ügyfeleknek, akiknek folyamatos frissítésekre, további variációkra vagy elemek módosítására van szükségük."
+    }
+  },
+  "cta": {
+    "label": "Kapcsolat",
+    "headline": "Van egy projekted?",
+    "brandName": "Avelon Motion",
+    "headingBold": "Van",
+    "headingLight": "egy projekted?",
+    "description": "Mesélj a projektedről – legyen az AI-videó, márkatörténet vagy kampány. Szívesen segítünk életre kelteni.",
+    "benefit1": {
+      "title": "Gyors válasz",
+      "description": "Ha készen állsz az együttműködésre, szeretnénk hallani rólad."
+    },
+    "benefit2": {
+      "title": "Egyértelmű következő lépések",
+      "description": "A konzultáció után részletes tervet és ütemtervet biztosítunk."
+    },
+    "quickResponse": {
+      "title": "Gyors válasz",
+      "description": "Ha készen állsz az együttműködésre, szeretnénk hallani rólad."
+    },
+    "clearSteps": {
+      "title": "Egyértelmű következő lépések",
+      "description": "A konzultáció után részletes tervet és ütemtervet biztosítunk."
+    },
+    "contactLabel": "Vagy írj közvetlenül:",
+    "rightHeading": "Beszéljünk",
+    "rightDescription": "Mesélj a projektedről – legyen az AI-videó, márkatörténet vagy kampány. Szívesen segítünk életre kelteni.",
+    "namePlaceholder": "Kovács János",
+    "emailPlaceholder": "info@pelda.hu",
+    "messagePlaceholder": "Üzeneted",
+    "successMessage": "Köszönjük! 24 órán belül felvesszük veled a kapcsolatot.",
+    "errorMessage": "Valami hiba történt. Kérjük, próbáld újra.",
+    "buttonLoading": "Küldés...",
+    "buttonSuccess": "Üzenet elküldve!",
+    "buttonText": "Üzenet küldése",
+    "legal": "Elfogadom az",
+    "privacyPolicy": "Adatvédelmi irányelveket",
+    "form": {
+      "nameLabel": "Neved",
+      "emailLabel": "E-mail",
+      "messageLabel": "Üzenet",
+      "submitLabel": "Üzenet Küldése",
+      "sending": "Küldés...",
+      "successTitle": "Üzenet Elküldve!",
+      "successMessage": "Köszönjük! 24 órán belül felvesszük veled a kapcsolatot.",
+      "errorMessage": "Valami hiba történt. Kérjük, próbáld újra.",
+      "privacyText": "Elfogadom az Adatvédelmi irányelveket és hozzájárulok, hogy az Avelon Motion felvegye velem a kapcsolatot az érdeklődésemmel kapcsolatban.",
+      "privacyRequired": "Kérjük, fogadd el az adatvédelmi irányelveket a folytatáshoz.",
+      "rateLimited": "Túl sok kísérlet. Kérjük, próbálj újra",
+      "minutes": "perc múlva."
+    }
+  },
+  "footer": {
+    "tagline": "Vezető AI-videógyártó stúdió, amely magával ragadó digitális élményeket hoz létre, és az alkotás határait feszegeti.",
+    "servicesLabel": "Szolgáltatások",
+    "companyLabel": "Vállalat",
+    "links": {
+      "service1": "AI Videógyártás",
+      "service2": "Vizuális Tervezés",
+      "service3": "Digitális Élmény",
+      "service4": "Márkaidentitás",
+      "about": "Rólunk",
+      "process": "Folyamatunk",
+      "work": "Portfólió",
+      "contact": "Kapcsolat",
+      "privacy": "Adatvédelmi Irányelv"
+    },
+    "copyright": "© {year} Avelon Motion. Minden jog fenntartva.",
+    "madeWith": "AI-vel és szenvedéllyel készült.",
+    "followUs": "Kövess minket"
+  },
+  "cookies": {
+    "title": "Cookie Beállítások",
+    "description": "Cookie-kat használunk a tapasztalatod javítása érdekében. Kiválaszthatod, milyen típusú cookie-kat fogadsz el.",
+    "learnMore": "Tudj meg többet az Adatvédelmi irányelvünkben",
+    "acceptAll": "Mindent Elfogadok",
+    "rejectOptional": "Opcionálisak Elutasítása",
+    "settings": "Beállítások",
+    "saveSettings": "Beállítások Mentése",
+    "back": "Vissza",
+    "essential": "Alapvető Cookie-k",
+    "essentialDesc": "Az oldal megfelelő működéséhez szükségesek.",
+    "analytics": "Analitikai Cookie-k",
+    "analyticsDesc": "Segítenek megérteni, hogyan lépnek kapcsolatba a látogatók az oldallal.",
+    "marketing": "Marketing Cookie-k",
+    "marketingDesc": "Releváns hirdetések megjelenítésére és kampányok nyomon követésére használják.",
+    "required": "Kötelező"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Az oldal nem található",
+    "description": "A keresett oldal nem létezik vagy áthelyezték.",
+    "backHome": "Vissza a főoldalra"
+  },
+  "privacy": {
+    "title": "Adatvédelmi Irányelv",
+    "lastUpdated": "Utoljára frissítve",
+    "backHome": "Vissza a főoldalra"
+  }
+}

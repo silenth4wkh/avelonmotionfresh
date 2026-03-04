@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+.gitignore
+.env*.local
+*.log
+__tests__
+coverage
+.vitest

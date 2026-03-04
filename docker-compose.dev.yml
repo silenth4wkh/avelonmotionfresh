@@ -1,0 +1,19 @@
+volumes:
+  avelon-next-cache:
+
+services:
+  app:
+    container_name: avelon-motion-fresh-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3002:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - avelon-next-cache:/app/.next
+    environment:
+      - WATCHPACK_POLLING=true
+      - HOSTNAME=0.0.0.0
+    command: sh -c "npm install && npm run dev:docker"
