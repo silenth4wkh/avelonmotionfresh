@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import type { ProcessProps } from '@/types/sections';
+import RevealText from '@/components/RevealText';
 
 const STEPS = [1, 2, 3, 4] as const;
 const MOD_LABELS = ['AM/01', 'AM/02', 'AM/03', 'AM/04'] as const;
@@ -27,14 +28,16 @@ export default function Process({ visibleSections }: ProcessProps) {
         >
           {t('meta')}
         </span>
-        <h2
-          className={`text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-none transition-all duration-700 delay-100 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-          style={{ fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif' }}
+        <RevealText
+          as="h2"
+          mode="words"
+          delay={60}
+          stagger={55}
+          duration={720}
+          className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-none"
         >
           {t('headline')}
-        </h2>
+        </RevealText>
       </div>
 
       {/* 2×2 Grid — Vertical MOD style */}
@@ -58,7 +61,6 @@ export default function Process({ visibleSections }: ProcessProps) {
                   </span>
                   <h3
                     className="text-2xl md:text-3xl font-black text-white uppercase leading-tight tracking-tight"
-                    style={{ fontFamily: 'var(--font-space-grotesk), system-ui, sans-serif' }}
                   >
                     {t(`step${step}.title`)}
                   </h3>

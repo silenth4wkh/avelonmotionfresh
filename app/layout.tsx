@@ -1,18 +1,21 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { IBM_Plex_Sans, Barlow } from 'next/font/google';
 import './globals.css';
 import ErrorBoundary from '@/components/ErrorBoundary';
 
-const inter = Inter({
+/* Reference (vertical.framer.media): editorial geometric sans — neutral body + strong display */
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-sans',
   display: 'swap',
+  weight: ['400', '500', '600', '700'],
 });
 
-const spaceGrotesk = Space_Grotesk({
+const barlow = Barlow({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-display',
   display: 'swap',
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
@@ -30,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-[#0a0a0a] text-[#f5f5f5]">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans antialiased min-h-screen bg-[#0a0a0a] text-[#f5f5f5]`}
+        className={`${ibmPlexSans.variable} ${barlow.variable} font-sans antialiased min-h-screen bg-[#0a0a0a] text-[#f5f5f5]`}
       >
         <ErrorBoundary>
           <div id="__next" className="min-h-screen">

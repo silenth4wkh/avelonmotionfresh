@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import type { AboutProps } from '@/types/sections';
+import RevealText from '@/components/RevealText';
 
 const NEON_BG = '#ff7300';
 
@@ -33,14 +34,17 @@ export default function About({ visibleSections }: AboutProps) {
           >
             {t('meta')}
           </span>
-          <h2
-            className={`text-4xl md:text-5xl lg:text-6xl font-black text-black uppercase tracking-tight mb-6 transition-all duration-700 delay-100 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-            }`}
-            style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}
+          <RevealText
+            as="h2"
+            mode="words"
+            delay={80}
+            stagger={60}
+            duration={750}
+            className="font-black text-black uppercase tracking-tight mb-6 leading-none"
+            wordClass="text-[clamp(2.5rem,5vw,4.5rem)]"
           >
             {t('headline')}
-          </h2>
+          </RevealText>
           <div
             className={`w-1 h-16 bg-black mb-6 transition-all duration-700 delay-200 ${
               isVisible ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-0'

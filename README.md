@@ -51,7 +51,7 @@ Ha a régi `avelon-motion` compose fut, állítsd le: `docker compose -f docker-
 - [x] Tailwind CSS
 - [x] next-intl, lucide-react
 - [x] Vitest + React Testing Library + jest-dom + jsdom
-- [x] Font: Inter, Space Grotesk
+- [x] Font: IBM Plex Sans (body), Barlow (display) — reference vertical.framer.media editorial style
 - [x] vitest.config.ts, vitest.setup.ts
 
 ## Fázis 2 ✓
