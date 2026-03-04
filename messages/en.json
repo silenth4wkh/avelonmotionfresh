@@ -92,8 +92,11 @@
   },
   "work": {
     "label": "Selected Work",
-    "headline": "SELECTED WORK",
+    "headline": "SELECTED",
+    "headlineLine2": "WORK",
     "subheadline": "A curated look at what we build—cinematic AI content across every format, from social to brand.",
+    "statementLine1": "FRAMES BECOME SIGNALS.",
+    "statementLine2": "STORIES BECOME MOTION.",
     "bodyText": "Every frame intentional. Every format an opportunity.",
     "bodyTextBold": "We blend AI-driven production with human direction to deliver work that scales without sacrificing craft.",
     "project1": {

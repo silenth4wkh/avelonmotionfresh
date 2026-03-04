@@ -92,8 +92,11 @@
   },
   "work": {
     "label": "Munkáink",
-    "headline": "KIVÁLASZTOTT MUNKÁK",
+    "headline": "KIVÁLASZTOTT",
+    "headlineLine2": "MUNKÁK",
     "subheadline": "Válogatott munkáink — filmes AI tartalom minden formátumban, szociál médiától a branding kampányokig.",
+    "statementLine1": "KÉPKOCKÁK JELEKKÉ VÁLNAK.",
+    "statementLine2": "TÖRTÉNETEK MOZGÁSSÁ VÁLNAK.",
     "bodyText": "Minden képkocka szándékos. Minden formátum lehetőség.",
     "bodyTextBold": "Az AI-alapú produkciót emberi irányítással párosítjuk: skálázható munka, kompromisszum nélkül.",
     "project1": {
