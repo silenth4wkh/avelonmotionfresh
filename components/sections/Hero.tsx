@@ -91,18 +91,18 @@ export default function Hero() {
         ) : (
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url('${MEDIA.heroImage}')`, filter: 'brightness(0.28)' }}
+            style={{ backgroundImage: `url('${MEDIA.heroImage}')`, filter: 'brightness(0.42)' }}
             aria-hidden="true"
           />
         )}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.94) 0%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.2) 100%)' }}
+          style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.28) 45%, rgba(0,0,0,0.06) 100%)' }}
           aria-hidden="true"
         />
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 65%)' }}
+          style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.38) 0%, transparent 60%)' }}
           aria-hidden="true"
         />
       </div>
