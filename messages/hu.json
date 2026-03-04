@@ -168,6 +168,7 @@
   "faq": {
     "label": "GYIK",
     "headline": "Gyakran Ismételt Kérdések",
+    "subheadline": "Minden, amit a folyamatainkról, árazásról és szállítható anyagokról tudni érdemes.",
     "q1": {
       "question": "Mi az AI-videógyártás, és hogyan működik?",
       "answer": "Az AI-videógyártás élvonalbeli mesterséges intelligenciát ötvöz filmes történetmesélésekkel. Az AI-t a kreativitás fokozására, a gyártási munkafolyamatok egyszerűsítésére és skálázható vizuális tartalom létrehozására használjuk, megőrizve a művészi minőséget."

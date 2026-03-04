@@ -162,22 +162,37 @@ a {
   .mobile-only  { display: none !important; }
 }
 
-/* FAQ: headline — one word per line, fills left column height (matches accordion), no crop */
-.faq-headline-column {
-  container-type: size;
-  container-name: faq-headline;
+/* FAQ: smooth accordion via grid-template-rows */
+.faq-answer-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.faq-headline-column .faq-headline-words {
-  font-size: clamp(2.5rem, 12vh, 20rem);
+.faq-answer-grid.open {
+  grid-template-rows: 1fr;
 }
-@container faq-headline (min-height: 300px) {
-  .faq-headline-column .faq-headline-words {
-    /* Fill height; cap by width so longest word (FREQUENTLY) fits and is not cropped */
-    font-size: min(
-      calc((100cqh - 4rem) / 3 / 0.95),
-      calc((100cqw - 2rem) / 6)
-    );
-  }
+.faq-answer-inner {
+  overflow: hidden;
+}
+
+/* FAQ: answer clip-path reveal */
+.faq-answer-text {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  transition: clip-path 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.06s;
+}
+.faq-answer-grid.open .faq-answer-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* FAQ: stagger entrance */
+.faq-row-enter {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  opacity: 0;
+  transition: clip-path 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+}
+.faq-row-enter.revealed {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
