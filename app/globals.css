@@ -96,6 +96,21 @@ a {
   100% { transform: translateX(-50%); }
 }
 
+/* Footer marquee strips */
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marqueeRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.marquee-left  { animation: marqueeLeft  22s linear infinite; }
+.marquee-right { animation: marqueeRight 18s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-left, .marquee-right { animation: none; }
+}
+
 /* Hero: giant display letters fade + scale (opacity 22% = 7% + 15%) */
 @keyframes heroDisplayReveal {
   from { opacity: 0; transform: scale(0.96); }

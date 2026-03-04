@@ -200,21 +200,40 @@ export default function Footer({ lang }: FooterProps) {
       {/* ── DIVIDER ─────────────────────────────────────────────── */}
       <div className="relative z-10 border-t border-black/20 mx-6 md:mx-10 lg:mx-14" />
 
-      {/* ── BLOCK 3: Giant overflow wordmark ────────────────────── */}
-      <div className="relative z-10 px-6 md:px-10 lg:px-14 pt-4 pb-2 overflow-hidden">
-        <p
-          className="font-black text-black uppercase leading-[0.80] tracking-[-0.04em] select-none"
-          style={{
-            fontSize: 'clamp(5rem, 25vw, 22rem)',
-            opacity: visible ? 1 : 0,
-            transform: visible ? 'translateY(0)' : 'translateY(60px)',
-            transition: 'opacity 1s cubic-bezier(0.22,1,0.36,1) 0.4s, transform 1s cubic-bezier(0.22,1,0.36,1) 0.4s',
-            /* Intentional overflow for editorial effect */
-            whiteSpace: 'nowrap',
-          }}
-        >
-          AVELON
-        </p>
+      {/* ── BLOCK 3: Marquee strips ──────────────────────────────
+          Strip A: left → right  |  Strip B: right → left         */}
+      <div className="relative z-10 overflow-hidden py-3 flex flex-col gap-2">
+
+        {/* Strip A — left to right */}
+        <div className="overflow-hidden whitespace-nowrap">
+          <span
+            className="marquee-left inline-block font-black text-black uppercase leading-none select-none"
+            style={{ fontSize: 'clamp(3.5rem, 14vw, 11rem)', letterSpacing: '-0.03em' }}
+            aria-hidden
+          >
+            {/* Duplicate text for seamless loop */}
+            {Array.from({ length: 4 }).map((_, i) => (
+              <span key={i}>
+                AI VIDEO PRODUCTION&nbsp;&nbsp;·&nbsp;&nbsp;CINEMATIC CONTENT&nbsp;&nbsp;·&nbsp;&nbsp;MOTION DESIGN&nbsp;&nbsp;·&nbsp;&nbsp;BRAND FILMS&nbsp;&nbsp;·&nbsp;&nbsp;
+              </span>
+            ))}
+          </span>
+        </div>
+
+        {/* Strip B — right to left */}
+        <div className="overflow-hidden whitespace-nowrap">
+          <span
+            className="marquee-right inline-block font-black text-black uppercase leading-none select-none"
+            style={{ fontSize: 'clamp(3.5rem, 14vw, 11rem)', letterSpacing: '-0.03em', opacity: 0.35 }}
+            aria-hidden
+          >
+            {Array.from({ length: 4 }).map((_, i) => (
+              <span key={i}>
+                3D ANIMATION&nbsp;&nbsp;·&nbsp;&nbsp;AI PHOTOGRAPHY&nbsp;&nbsp;·&nbsp;&nbsp;SOCIAL UGC&nbsp;&nbsp;·&nbsp;&nbsp;SHORT FILMS&nbsp;&nbsp;·&nbsp;&nbsp;MARKETING&nbsp;&nbsp;·&nbsp;&nbsp;
+              </span>
+            ))}
+          </span>
+        </div>
       </div>
 
       {/* ── BOTTOM BAR ──────────────────────────────────────────── */}
