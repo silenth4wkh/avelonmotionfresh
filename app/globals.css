@@ -105,10 +105,23 @@ a {
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
 }
-.marquee-left  { animation: marqueeLeft  22s linear infinite; }
-.marquee-right { animation: marqueeRight 18s linear infinite; }
+.marquee-left  { animation: marqueeLeft  44s linear infinite; }
+.marquee-right { animation: marqueeRight 36s linear infinite; }
 @media (prefers-reduced-motion: reduce) {
   .marquee-left, .marquee-right { animation: none; }
+}
+
+/* Voice strip waveform bars — subtle pulse */
+@keyframes voiceBarPulse {
+  0%, 100% { opacity: 0.7; transform: scaleY(1); }
+  50%      { opacity: 1;   transform: scaleY(1.08); }
+}
+.voice-bar {
+  transform-origin: bottom;
+  animation: voiceBarPulse 2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .voice-bar { animation: none; }
 }
 
 /* Hero: giant display letters fade + scale (opacity 22% = 7% + 15%) */
@@ -147,6 +160,24 @@ a {
 @media (min-width: 1024px) {
   .desktop-nav { display: flex !important; align-items: center; }
   .mobile-only  { display: none !important; }
+}
+
+/* FAQ: headline — one word per line, fills left column height (matches accordion), no crop */
+.faq-headline-column {
+  container-type: size;
+  container-name: faq-headline;
+}
+.faq-headline-column .faq-headline-words {
+  font-size: clamp(2.5rem, 12vh, 20rem);
+}
+@container faq-headline (min-height: 300px) {
+  .faq-headline-column .faq-headline-words {
+    /* Fill height; cap by width so longest word (FREQUENTLY) fits and is not cropped */
+    font-size: min(
+      calc((100cqh - 4rem) / 3 / 0.95),
+      calc((100cqw - 2rem) / 6)
+    );
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

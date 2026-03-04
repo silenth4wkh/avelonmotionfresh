@@ -130,6 +130,11 @@
       "result": "Full motion brand systems—logo animations, reels, and dynamic assets built for digital-first presentation."
     }
   },
+  "voiceStrip": {
+    "sync": "Sync",
+    "podcast": "Podcast",
+    "voiceChanger": "Voice Changer"
+  },
   "process": {
     "label": "How We Work",
     "meta": "IDX/AM — CAT — 2.01 — PROCESS",

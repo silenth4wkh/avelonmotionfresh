@@ -8,6 +8,7 @@ import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Services from '@/components/sections/Services';
 import Work from '@/components/sections/Work';
+import VoiceStrip from '@/components/sections/VoiceStrip';
 import Process from '@/components/sections/Process';
 import FAQ from '@/components/sections/FAQ';
 import CTA from '@/components/sections/CTA';
@@ -42,6 +43,7 @@ export default function LandingPage({ lang }: LandingPageProps) {
         <About visibleSections={visibleSections} />
         <Services visibleSections={visibleSections} />
         <Work visibleSections={visibleSections} />
+        <VoiceStrip visibleSections={visibleSections} />
         <Process visibleSections={visibleSections} />
         <FAQ visibleSections={visibleSections} />
         <CTA visibleSections={visibleSections} />

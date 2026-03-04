@@ -35,27 +35,31 @@ export default function FAQ({ visibleSections }: FaqProps) {
         aria-hidden="true"
       />
 
-      {/* Rama-style 2x1 grid: left = brutal title, right = accordion */}
-      <div className="relative w-full grid grid-cols-1 lg:grid-cols-2 min-h-[min(80vh,800px)] z-10">
-        {/* Left: FREQUENTLY ASKED QUESTIONS — brutal large type */}
+      {/* Rama-style 2x1 grid: left = title (word per line), right = accordion; row height = accordion height */}
+      <div className="relative w-full grid grid-cols-1 lg:grid-cols-2 z-10">
+        {/* Left: one word per line, fills column height (matches accordion from first to last question) */}
         <div
-          className={`flex items-center justify-center lg:justify-start px-6 md:px-10 lg:px-16 xl:px-24 py-16 lg:py-24 transition-all duration-700 delay-200 ${
+          className={`faq-headline-column flex items-center justify-center lg:justify-start px-6 md:px-10 lg:px-16 xl:px-24 py-16 lg:py-24 min-h-0 overflow-hidden transition-all duration-700 delay-200 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
           <h2
-            className="font-black text-white uppercase leading-[0.9] tracking-tighter select-none"
-            style={{
-              fontSize: 'clamp(2.5rem, 6vw, 7rem)',
-              lineHeight: '0.95',
-            }}
+            className="font-black text-white uppercase leading-[0.95] tracking-tighter select-none w-full max-w-full faq-headline-words"
+            style={{ lineHeight: 0.95 }}
           >
-            {t('headline').toUpperCase()}
+            {t('headline')
+              .toUpperCase()
+              .split(/\s+/)
+              .map((word, i) => (
+                <span key={i} className="block">
+                  {word}
+                </span>
+              ))}
           </h2>
         </div>
 
-        {/* Right: accordion questions */}
-        <div className="flex flex-col justify-center px-6 md:px-10 lg:px-16 xl:px-24 py-12 lg:py-24">
+        {/* Right: accordion questions — defines row height */}
+        <div className="flex flex-col justify-center px-6 md:px-10 lg:px-16 xl:px-24 py-12 lg:py-24 min-h-[min(70vh,700px)]">
           <div className="space-y-0">
             {FAQ_INDICES.map((i) => (
               <div

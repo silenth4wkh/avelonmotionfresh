@@ -130,6 +130,11 @@
       "result": "Teljes motion brand rendszerek — logóanimációk, reelok és dinamikus eszközök digitális megjelenéshez."
     }
   },
+  "voiceStrip": {
+    "sync": "Sync",
+    "podcast": "Podcast",
+    "voiceChanger": "Voice Changer"
+  },
   "process": {
     "label": "Folyamatunk",
     "meta": "IDX/AM — CAT — 2.01 — FOLYAMAT",
