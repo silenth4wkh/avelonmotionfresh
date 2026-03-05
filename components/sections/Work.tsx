@@ -3,50 +3,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import LazyImage from '@/components/LazyImage';
-import { MEDIA } from '@/lib/media';
+import { WORK_IMAGES } from '@/data/work-images';
 import type { WorkProps } from '@/types/sections';
 
 const NEON_BG = '#ff7300';
 
-/* ─── Per-category image sets (5 each) ─────────────────────────────
-   Swap out with real per-category images when ready.               */
-const CATEGORY_IMAGES = {
-  social: [
-    MEDIA.workImages.card1,
-    MEDIA.workImages.card2,
-    MEDIA.workImages.card3,
-    MEDIA.workImages.card4,
-    MEDIA.workImages.card5,
-  ],
-  video: [
-    MEDIA.workImages.card2,
-    MEDIA.workImages.card3,
-    MEDIA.workImages.card6,
-    MEDIA.workImages.card1,
-    MEDIA.workImages.card4,
-  ],
-  marketing: [
-    MEDIA.workImages.card3,
-    MEDIA.workImages.card4,
-    MEDIA.workImages.card5,
-    MEDIA.workImages.card6,
-    MEDIA.workImages.card2,
-  ],
-  animation: [
-    MEDIA.workImages.card4,
-    MEDIA.workImages.card5,
-    MEDIA.workImages.card6,
-    MEDIA.workImages.card1,
-    MEDIA.workImages.card3,
-  ],
-  photography: [
-    MEDIA.workImages.card5,
-    MEDIA.workImages.card6,
-    MEDIA.workImages.card1,
-    MEDIA.workImages.card2,
-    MEDIA.workImages.card4,
-  ],
-} as const;
+/* ─── Per-category image sets ───────────────────────────────────────
+   Képeket a data/work-images.ts fájlban cseréld le.               */
+const CATEGORY_IMAGES = WORK_IMAGES;
 
 type CategoryKey = keyof typeof CATEGORY_IMAGES;
 
@@ -57,12 +21,13 @@ const CATEGORIES: {
   mod: string;
   bracket: string;
   roman: string;
+  ready: boolean;
 }[] = [
-  { key: 'social',      label: 'Social — UGC',        sublabel: 'Creator-style content at scale', mod: 'AM/01', bracket: '[UGC]',   roman: 'I'   },
-  { key: 'video',       label: 'AI Video — Films',    sublabel: 'Narrative-driven short films',   mod: 'AM/02', bracket: '[FILM]',  roman: 'II'  },
-  { key: 'marketing',   label: 'Marketing',           sublabel: 'Performance & brand campaigns',  mod: 'AM/03', bracket: '[BRAND]', roman: 'III' },
-  { key: 'animation',   label: 'AI Animation — 3D',   sublabel: 'Product viz & motion assets',    mod: 'AM/04', bracket: '[3D]',    roman: 'IV'  },
-  { key: 'photography', label: 'Photography — Brand', sublabel: 'AI-generated brand imagery',     mod: 'AM/05', bracket: '[PHOTO]', roman: 'V'   },
+  { key: 'photography', label: 'Photography — Brand', sublabel: 'AI-generated brand imagery',     mod: 'AM/01', bracket: '[PHOTO]', roman: 'I',   ready: true  },
+  { key: 'video',       label: 'AI Video — Films',    sublabel: 'Narrative-driven short films',   mod: 'AM/02', bracket: '[FILM]',  roman: 'II',  ready: false },
+  { key: 'marketing',   label: 'Marketing',           sublabel: 'Performance & brand campaigns',  mod: 'AM/03', bracket: '[BRAND]', roman: 'III', ready: false },
+  { key: 'animation',   label: 'AI Animation — 3D',   sublabel: 'Product viz & motion assets',    mod: 'AM/04', bracket: '[3D]',    roman: 'IV',  ready: false },
+  { key: 'social',      label: 'Social — UGC',        sublabel: 'Creator-style content at scale', mod: 'AM/05', bracket: '[UGC]',   roman: 'V',   ready: false },
 ];
 
 export default function Work({ visibleSections }: WorkProps) {
@@ -70,8 +35,8 @@ export default function Work({ visibleSections }: WorkProps) {
   const isVisible = visibleSections.has('work');
 
   /* ── Category state ── */
-  const [activeCategory, setActiveCategory]   = useState<CategoryKey>('social');
-  const [displayCategory, setDisplayCategory] = useState<CategoryKey>('social');
+  const [activeCategory, setActiveCategory]   = useState<CategoryKey>('photography');
+  const [displayCategory, setDisplayCategory] = useState<CategoryKey>('photography');
   const [catTransitioning, setCatTransitioning] = useState(false);
 
   /* ── Slide state (within active category) ── */
@@ -79,9 +44,12 @@ export default function Work({ visibleSections }: WorkProps) {
   const [displaySlideIdx, setDisplaySlideIdx] = useState(0);
   const [slideRevealed, setSlideRevealed]     = useState(true);
   const [direction, setDirection]             = useState<'next' | 'prev'>('next');
+  const [isHovering, setIsHovering]           = useState(false);
 
-  const catTimer   = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const slideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const catTimer    = useRef<ReturnType<typeof setTimeout>  | null>(null);
+  const slideTimer  = useRef<ReturnType<typeof setTimeout>  | null>(null);
+  const autoRef     = useRef<ReturnType<typeof setInterval> | null>(null);
+  const touchStartX = useRef(0);
 
   /* Category crossfade */
   useEffect(() => {
@@ -109,9 +77,20 @@ export default function Work({ visibleSections }: WorkProps) {
     return () => { if (slideTimer.current) clearTimeout(slideTimer.current); };
   }, [slideIdx, displaySlideIdx]);
 
+  /* Auto-play — 4s per slide, pause on hover / cat-transition / invisible */
+  useEffect(() => {
+    if (autoRef.current) clearInterval(autoRef.current);
+    if (!isVisible || isHovering || catTransitioning) return;
+    autoRef.current = setInterval(() => {
+      setDirection('next');
+      setSlideIdx(prev => (prev + 1) % CATEGORY_IMAGES[activeCategory].length);
+    }, 4000);
+    return () => { if (autoRef.current) clearInterval(autoRef.current); };
+  }, [isVisible, isHovering, catTransitioning, activeCategory]);
+
   const images   = CATEGORY_IMAGES[displayCategory];
   const totalImg = CATEGORY_IMAGES[activeCategory].length;
-  const currentImg = images[displaySlideIdx]!;
+  const currentImg = images[displaySlideIdx] ?? images[0];
   const activeCat  = CATEGORIES.find(c => c.key === activeCategory)!;
   const displayCat = CATEGORIES.find(c => c.key === displayCategory)!;
 
@@ -205,13 +184,17 @@ export default function Work({ visibleSections }: WorkProps) {
 
             <div className="flex flex-col gap-0">
               {CATEGORIES.map((cat, idx) => {
-                const isActive = activeCategory === cat.key;
+                const isActive   = activeCategory === cat.key;
+                const isDisabled = !cat.ready;
                 return (
                   <button
                     key={cat.key}
                     type="button"
-                    onClick={() => setActiveCategory(cat.key)}
-                    className="group w-full text-left py-3 border-b border-black/15 last:border-b-0 focus:outline-none"
+                    onClick={() => { if (!isDisabled) setActiveCategory(cat.key); }}
+                    disabled={isDisabled}
+                    className={`group w-full text-left py-3 border-b border-black/15 last:border-b-0 focus:outline-none transition-opacity duration-200 ${
+                      isDisabled ? 'opacity-40 cursor-not-allowed' : ''
+                    }`}
                     style={{ transitionDelay: `${300 + idx * 40}ms` }}
                   >
                     <div className="flex items-center justify-between">
@@ -230,40 +213,52 @@ export default function Work({ visibleSections }: WorkProps) {
                           className={`font-black text-sm md:text-base uppercase tracking-tight leading-none transition-all duration-200 ${
                             isActive
                               ? 'text-black'
-                              : 'text-black/55 group-hover:text-black/80'
+                              : isDisabled
+                                ? 'text-black/55'
+                                : 'text-black/55 group-hover:text-black/80'
                           }`}
                         >
                           {cat.label}
                         </span>
                       </div>
 
-                      {/* Right side: sublabel + arrow */}
+                      {/* Right side: sublabel + arrow OR soon chip */}
                       <div className="flex items-center gap-2 flex-shrink-0">
-                        <span
-                          className={`text-[9px] text-black/40 uppercase tracking-wide hidden md:block transition-opacity duration-200 ${
-                            isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'
-                          }`}
-                        >
-                          {cat.sublabel}
-                        </span>
-                        <span
-                          className={`font-black text-black text-sm transition-all duration-300 ${
-                            isActive
-                              ? 'opacity-100 translate-x-0'
-                              : 'opacity-0 -translate-x-1 group-hover:opacity-40 group-hover:translate-x-0'
-                          }`}
-                        >
-                          →
-                        </span>
+                        {isDisabled ? (
+                          <span className="text-[8px] font-mono tracking-widest uppercase text-black/40 border border-black/20 px-1.5 py-0.5">
+                            SOON
+                          </span>
+                        ) : (
+                          <>
+                            <span
+                              className={`text-[9px] text-black/40 uppercase tracking-wide hidden md:block transition-opacity duration-200 ${
+                                isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'
+                              }`}
+                            >
+                              {cat.sublabel}
+                            </span>
+                            <span
+                              className={`font-black text-black text-sm transition-all duration-300 ${
+                                isActive
+                                  ? 'opacity-100 translate-x-0'
+                                  : 'opacity-0 -translate-x-1 group-hover:opacity-40 group-hover:translate-x-0'
+                              }`}
+                            >
+                              →
+                            </span>
+                          </>
+                        )}
                       </div>
                     </div>
 
-                    {/* Active underline */}
-                    <div
-                      className={`mt-2 h-[1.5px] bg-black origin-left transition-all duration-400 ${
-                        isActive ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
-                      }`}
-                    />
+                    {/* Active underline — only for ready categories */}
+                    {!isDisabled && (
+                      <div
+                        className={`mt-2 h-[1.5px] bg-black origin-left transition-all duration-400 ${
+                          isActive ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
+                        }`}
+                      />
+                    )}
                   </button>
                 );
               })}
@@ -272,7 +267,17 @@ export default function Work({ visibleSections }: WorkProps) {
         </div>
 
         {/* ── RIGHT PANEL: slideshow ────────────────────────────────── */}
-        <div className="relative bg-[#080808] min-h-[65vh] lg:min-h-full overflow-hidden group/panel">
+        <div
+          className="relative bg-[#080808] min-h-[65vh] lg:min-h-full overflow-hidden group/panel"
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+          onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
+          onTouchEnd={(e) => {
+            const delta = touchStartX.current - e.changedTouches[0].clientX;
+            if (delta > 50) goNext();
+            else if (delta < -50) goPrev();
+          }}
+        >
 
           {/* Image — crossfade */}
           <div
@@ -281,7 +286,11 @@ export default function Work({ visibleSections }: WorkProps) {
           >
             <div
               className="absolute inset-0 transition-transform duration-[1200ms] ease-out"
-              style={{ transform: slideRevealed ? 'scale(1)' : 'scale(1.04)' }}
+              style={{
+                transform: slideRevealed
+                  ? 'scale(1) translateX(0px)'
+                  : `scale(1.04) translateX(${direction === 'next' ? '28px' : '-28px'})`,
+              }}
             >
               <LazyImage
                 src={currentImg.src}
@@ -289,6 +298,7 @@ export default function Work({ visibleSections }: WorkProps) {
                 fill
                 className="object-cover grayscale"
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                priority={displaySlideIdx === 0}
               />
             </div>
             <div className="absolute inset-0 bg-black/30" />

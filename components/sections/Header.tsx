@@ -65,50 +65,69 @@ export default function Header({ lang }: HeaderProps) {
   return (
     <>
       <header
-        className="sticky top-0 left-0 right-0 z-50 h-14 border-b border-white/10 bg-black/80 backdrop-blur-md"
+        className="sticky top-0 left-0 right-0 z-50 h-16"
         role="banner"
+        style={{ background: 'rgba(0,0,0,0.92)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
       >
-        <div className="h-full w-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, #ff7300 30%, #ff7300 70%, transparent)' }} aria-hidden="true" />
+
+        <div className="h-full w-full px-5 sm:px-8 lg:px-10 flex items-center justify-between">
+
           {/* Brand */}
-          <div className="flex-shrink-0 flex items-center gap-2 sm:gap-3">
-            <Link
-              href={`/${lang}`}
-              aria-label={t('nav.home')}
-              onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
+          <Link
+            href={`/${lang}`}
+            aria-label={t('nav.home')}
+            onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}
+            className="flex-shrink-0 flex items-center gap-3 group"
+          >
+            <span
+              className="font-black text-white leading-none tracking-tighter transition-colors duration-200 group-hover:text-white/80"
+              style={{ fontSize: '1.6rem', letterSpacing: '-0.05em' }}
             >
-              <span className="text-2xl sm:text-3xl tracking-tight text-white hover:text-white/70 transition-colors font-black leading-none block">
-                AVELON MOTION
-              </span>
-            </Link>
-            <span className="hidden sm:inline-block text-xs text-white/60 tracking-wider uppercase">
-              | {t('brand.tagline')}
+              AM
             </span>
-          </div>
+            <span
+              className="hidden sm:block text-[10px] tracking-[0.22em] uppercase font-medium"
+              style={{ color: 'rgba(255,255,255,0.35)', paddingLeft: '0.5rem', borderLeft: '1px solid rgba(255,255,255,0.12)', lineHeight: 1 }}
+            >
+              {t('brand.tagline')}
+            </span>
+          </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center gap-1">
             <nav aria-label="Main navigation">
-              <ul className="flex items-center gap-8 list-none m-0 p-0">
+              <ul className="flex items-center list-none m-0 p-0">
                 {navItems.map((item) => (
                   <li key={item.id}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className={`text-sm font-medium transition-all duration-200 relative group ${
-                        currentSection === item.id ? 'text-white' : 'text-white/80 hover:text-white'
-                      }`}
+                      className="relative px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors duration-200 group"
+                      style={{ color: currentSection === item.id ? '#fff' : 'rgba(255,255,255,0.5)' }}
                       aria-current={currentSection === item.id ? 'page' : undefined}
                     >
                       {item.label}
-                      <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-200 group-hover:w-full" />
+                      {/* Orange dot for active */}
+                      {currentSection === item.id && (
+                        <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full" style={{ backgroundColor: '#ff7300' }} aria-hidden="true" />
+                      )}
+                      {/* Hover underline */}
+                      <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 h-px w-0 group-hover:w-4/5 transition-all duration-300" style={{ backgroundColor: 'rgba(255,255,255,0.25)' }} />
                     </button>
                   </li>
                 ))}
               </ul>
             </nav>
 
+            <div className="w-px h-5 mx-4" style={{ backgroundColor: 'rgba(255,255,255,0.1)' }} aria-hidden="true" />
+
             <button
               onClick={toggleLanguage}
-              className="text-white/80 hover:text-white text-sm font-medium px-4 py-2.5 min-h-[44px] border border-white/20 hover:border-white/40 rounded transition-colors"
+              className="text-[10px] font-bold tracking-[0.18em] uppercase transition-all duration-200 px-3 py-1.5"
+              style={{ color: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '2px' }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = '#fff'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.35)'; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = 'rgba(255,255,255,0.45)'; (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(255,255,255,0.12)'; }}
               aria-label={`Switch language to ${altLang}`}
             >
               {langLabel}
@@ -119,25 +138,29 @@ export default function Header({ lang }: HeaderProps) {
           <div className="flex lg:hidden items-center gap-3">
             <button
               onClick={toggleLanguage}
-              className="text-white/80 hover:text-white text-sm font-medium px-3 py-2 min-h-[44px] border border-white/20 hover:border-white/40 rounded transition-colors"
+              className="text-[10px] font-bold tracking-[0.18em] uppercase px-3 py-1.5 min-h-[44px] transition-colors duration-200"
+              style={{ color: 'rgba(255,255,255,0.45)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '2px' }}
               aria-label={`Switch to ${altLang}`}
             >
               {langLabel}
             </button>
             <button
               onClick={() => setMobileMenuOpen((v) => !v)}
-              className="text-white/80 hover:text-white p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded transition-colors"
+              className="flex flex-col justify-center items-center gap-1.5 p-3 min-w-[44px] min-h-[44px] group"
               aria-label="Toggle menu"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {mobileMenuOpen ? (
+                <svg className="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <>
+                  <span className="block w-5 h-px transition-colors duration-200" style={{ backgroundColor: 'rgba(255,255,255,0.7)' }} />
+                  <span className="block w-3 h-px transition-colors duration-200" style={{ backgroundColor: 'rgba(255,255,255,0.4)' }} />
+                </>
+              )}
             </button>
           </div>
         </div>
@@ -153,23 +176,35 @@ export default function Header({ lang }: HeaderProps) {
           aria-label="Mobile navigation"
         >
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="absolute top-14 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-white/10">
-            <nav className="px-4 py-6" aria-label="Mobile navigation">
-              <ul className="flex flex-col space-y-1 list-none m-0 p-0">
+          <div
+            className="absolute top-16 left-0 right-0 border-b"
+            style={{ background: 'rgba(0,0,0,0.97)', backdropFilter: 'blur(20px)', borderColor: 'rgba(255,255,255,0.06)' }}
+          >
+            <nav className="px-5 py-4" aria-label="Mobile navigation">
+              <ul className="flex flex-col list-none m-0 p-0">
                 {navItems.map((item) => (
                   <li key={item.id}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className={`w-full text-left text-base font-medium py-4 px-2 min-h-[48px] flex items-center border-b border-white/5 last:border-0 transition-colors ${
-                        currentSection === item.id ? 'text-white' : 'text-white/80 hover:text-white'
-                      }`}
+                      className="w-full text-left py-4 px-0 min-h-[48px] flex items-center justify-between border-b transition-colors duration-150"
+                      style={{
+                        color: currentSection === item.id ? '#fff' : 'rgba(255,255,255,0.5)',
+                        borderColor: 'rgba(255,255,255,0.05)',
+                        fontSize: '11px',
+                        fontWeight: 600,
+                        letterSpacing: '0.16em',
+                        textTransform: 'uppercase',
+                      }}
                       aria-current={currentSection === item.id ? 'page' : undefined}
                     >
                       {item.label}
+                      {currentSection === item.id && (
+                        <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ backgroundColor: '#ff7300' }} aria-hidden="true" />
+                      )}
                     </button>
                   </li>
                 ))}

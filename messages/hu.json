@@ -10,7 +10,7 @@
   },
   "brand": {
     "tagline": "AI Videógyártás",
-    "description": "Mozgóképes AI-alapú videógyártás modern márkáknak"
+    "description": "Az Avelon Motion egy budapesti AI videógyártó stúdió, amely filmes brand videókat, motion designt és AI-generált vizuális rendszereket alkot modern márkák számára szerte a világon."
   },
   "hero": {
     "explore": "fedezd fel",
@@ -45,6 +45,8 @@
     "label": "Rólunk",
     "meta": "IDX / AM — CAT — 1.01 — RÓLUNK",
     "headline": "Értelem minden képkockában.",
+    "headlineLine1": "ÉRTELEM",
+    "headlineLine2": "MINDEN KÉPKOCKÁBAN.",
     "description": "Az Avelon Motion élvonalbeli AI-technológiát egyesít emberi kreativitással, hogy olyan vizuális rendszereket hozzon létre, amelyek alkalmazkodnak, fejlődnek és hűek maradnak a te márkád egyedi hangjához. Dizájnerek és technológusok vagyunk, akik skálázható tartalommegoldásokat alkotnak, sosem feláldozva a minőséget vagy a művésziséget.",
     "feature1": {
       "title": "AI-alapú gyártás",

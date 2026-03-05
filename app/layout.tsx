@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { IBM_Plex_Sans, Barlow } from 'next/font/google';
+import { getLocale } from 'next-intl/server';
 import './globals.css';
 import ErrorBoundary from '@/components/ErrorBoundary';
 
@@ -25,13 +26,19 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
   return (
-    <html lang="en" className="bg-[#0a0a0a] text-[#f5f5f5]">
+    <html lang={locale} className="bg-[#0a0a0a] text-[#f5f5f5]">
+      <head>
+        {/* Preconnect to Cloudinary — eliminates DNS + TLS handshake latency for images/videos */}
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+      </head>
       <body
         className={`${ibmPlexSans.variable} ${barlow.variable} font-sans antialiased min-h-screen bg-[#0a0a0a] text-[#f5f5f5]`}
       >

@@ -62,11 +62,11 @@ export class RateLimiter {
       const data = localStorage.getItem(this.key);
       if (!data) return [];
       const parsed: unknown = JSON.parse(data);
-      if (!Array.isArray(parsed)) {
+      if (!Array.isArray(parsed) || !parsed.every((n) => typeof n === 'number')) {
         this.reset();
         return [];
       }
-      return parsed as number[];
+      return parsed;
     } catch {
       return [];
     }

@@ -1,18 +1,24 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import SkipLink from '@/components/SkipLink';
+import dynamic from 'next/dynamic';
 import LoadingScreen from '@/components/LoadingScreen';
+
+// ── Above-fold: static imports (LCP-critical, must not be lazy) ──────────────
 import Header from '@/components/sections/Header';
-import Hero from '@/components/sections/Hero';
-import About from '@/components/sections/About';
-import Services from '@/components/sections/Services';
-import Work from '@/components/sections/Work';
-import VoiceStrip from '@/components/sections/VoiceStrip';
-import Process from '@/components/sections/Process';
-import FAQ from '@/components/sections/FAQ';
-import CTA from '@/components/sections/CTA';
-import Footer from '@/components/sections/Footer';
+import Hero   from '@/components/sections/Hero';
+
+// ── Below-fold: dynamic imports (code-split, loaded on demand) ───────────────
+// Each section gets its own JS chunk → smaller initial bundle, faster FCP/LCP
+const About      = dynamic(() => import('@/components/sections/About'));
+const Services   = dynamic(() => import('@/components/sections/Services'));
+const Work       = dynamic(() => import('@/components/sections/Work'));
+const VoiceStrip = dynamic(() => import('@/components/sections/VoiceStrip'));
+const Process    = dynamic(() => import('@/components/sections/Process'));
+const FAQ        = dynamic(() => import('@/components/sections/FAQ'));
+const CTA        = dynamic(() => import('@/components/sections/CTA'));
+const Footer     = dynamic(() => import('@/components/sections/Footer'));
+
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 interface LandingPageProps {
@@ -30,15 +36,16 @@ export default function LandingPage({ lang }: LandingPageProps) {
 
   return (
     <>
-      <SkipLink />
       {isLoading && <LoadingScreen duration={1800} />}
+
+      {/* Header is outside <main> — screen readers treat <main> as the primary
+          content landmark; navigation belongs outside it (WCAG 2.1 landmark rules) */}
+      <Header lang={lang} />
 
       <main
         id="main-content"
         className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
       >
-        <Header lang={lang} />
-
         <Hero />
         <About visibleSections={visibleSections} />
         <Services visibleSections={visibleSections} />

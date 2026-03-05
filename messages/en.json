@@ -10,7 +10,7 @@
   },
   "brand": {
     "tagline": "AI Video Production",
-    "description": "Cinematic AI-powered video production for modern brands"
+    "description": "Avelon Motion is a Budapest-based AI video production studio creating cinematic brand films, motion design, and AI-generated visual systems for modern brands worldwide."
   },
   "hero": {
     "explore": "explore",
@@ -45,6 +45,8 @@
     "label": "Our Story",
     "meta": "IDX / AM — CAT — 1.01 — OUR STORY",
     "headline": "Pixels with purpose.",
+    "headlineLine1": "PIXELS",
+    "headlineLine2": "WITH PURPOSE.",
     "description": "Avelon Motion combines cutting-edge AI technology with human creativity to build visual systems that adapt, evolve, and stay true to your brand's unique voice. We're designers and technologists who craft scalable content solutions without compromising on quality or artistry.",
     "feature1": {
       "title": "AI-Powered Production",

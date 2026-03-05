@@ -6,9 +6,6 @@ export interface HeaderProps {
   lang: string;
 }
 
-export interface HeroProps {
-  lang: string;
-}
 
 export interface AboutProps extends BaseProps {}
 

@@ -75,16 +75,19 @@ export default function CTA({ visibleSections }: CtaProps) {
       contactFormRateLimiter.recordAttempt();
 
       try {
-        await new Promise<void>((resolve, reject) =>
-          setTimeout(() => (Math.random() > 0.05 ? resolve() : reject(new Error('Network error'))), 1500)
-        );
+        // TODO: implement /api/contact backend route (email sending)
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(sanitized),
+        });
+        if (!res.ok) throw new Error(`Server error: ${res.status}`);
         setStatus('success');
         setTimeout(() => {
           setFormData(INITIAL_FORM);
           setGdprConsent(false);
           setStatus('idle');
         }, 3000);
-        if (process.env.NODE_ENV === 'development') console.log('[CTA] submitted:', sanitized);
       } catch {
         setStatus('error');
       }

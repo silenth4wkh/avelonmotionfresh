@@ -46,28 +46,11 @@ export const useScrollAnimation = (
   useEffect(() => {
     observe();
 
-    // Re-observe after loading (2s) - layout stabilizes, catches below-fold sections
+    // Re-observe after 2s so layout stabilizes and catches below-fold sections
     const t1 = setTimeout(observe, 2000);
-
-    // Fallback: after 500ms, show any section still missing (robust against observer misses)
-    const t2 = setTimeout(() => {
-      setVisibleSections((prev) => {
-        const sections = document.querySelectorAll<HTMLElement>('[data-section]');
-        let changed = false;
-        const next = new Set(prev);
-        sections.forEach((el) => {
-          if (el.id && !next.has(el.id)) {
-            next.add(el.id);
-            changed = true;
-          }
-        });
-        return changed ? next : prev;
-      });
-    }, 500);
 
     return () => {
       clearTimeout(t1);
-      clearTimeout(t2);
       observerRef.current?.disconnect();
     };
   }, [observe]);

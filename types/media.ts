@@ -25,15 +25,6 @@ export interface ProcessMedia {
   delivery: MediaImage;
 }
 
-export interface WorkImages {
-  card1: MediaImage;
-  card2: MediaImage;
-  card3: MediaImage;
-  card4: MediaImage;
-  card5: MediaImage;
-  card6: MediaImage;
-}
-
 export interface Logos {
   quantum: string | null;
   cubekit: string | null;
@@ -50,6 +41,5 @@ export interface MediaStore {
   ctaImage: MediaImage;
   services: ServiceMedia;
   process: ProcessMedia;
-  workImages: WorkImages;
   logos: Logos;
 }

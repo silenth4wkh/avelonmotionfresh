@@ -208,7 +208,7 @@ export default function Footer({ lang }: FooterProps) {
         <div className="overflow-hidden whitespace-nowrap">
           <span
             className="marquee-left inline-block font-black text-black uppercase leading-none select-none"
-            style={{ fontSize: 'clamp(3.5rem, 14vw, 11rem)', letterSpacing: '-0.03em' }}
+            style={{ fontSize: 'clamp(2.5rem, 12vw, 11rem)', letterSpacing: '-0.03em' }}
             aria-hidden
           >
             {/* Duplicate text for seamless loop */}
@@ -224,7 +224,7 @@ export default function Footer({ lang }: FooterProps) {
         <div className="overflow-hidden whitespace-nowrap">
           <span
             className="marquee-right inline-block font-black text-black uppercase leading-none select-none"
-            style={{ fontSize: 'clamp(3.5rem, 14vw, 11rem)', letterSpacing: '-0.03em', opacity: 0.35 }}
+            style={{ fontSize: 'clamp(2.5rem, 12vw, 11rem)', letterSpacing: '-0.03em', opacity: 0.35 }}
             aria-hidden
           >
             {Array.from({ length: 4 }).map((_, i) => (

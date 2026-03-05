@@ -4,6 +4,12 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { LOCALES, type Language } from '@/types/language';
 import CookieConsent from '@/components/CookieConsent';
+import {
+  buildOrganizationSchema,
+  buildServiceSchema,
+  buildFaqSchema,
+  buildWebSiteSchema,
+} from '@/lib/jsonld';
 
 interface LangLayoutProps {
   children: React.ReactNode;
@@ -30,8 +36,13 @@ export async function generateMetadata({
     { hrefLang: 'x-default', url: `${baseUrl}/en` },
   ];
 
+  // title: string only → root layout template wraps it: "AI Video Production | Avelon Motion"
+  // Avoids the duplicate "Avelon Motion – AI Video Production | Avelon Motion"
+  const pageTitle = t('tagline');
+  const ogTitle   = `Avelon Motion – ${t('tagline')}`;
+
   return {
-    title: `Avelon Motion – ${t('tagline')}`,
+    title: pageTitle,
     description: t('description'),
     alternates: {
       canonical: `${baseUrl}/${lang}`,
@@ -42,13 +53,22 @@ export async function generateMetadata({
       locale: lang === 'hu' ? 'hu_HU' : 'en_US',
       url: `${baseUrl}/${lang}`,
       siteName: 'Avelon Motion',
-      title: `Avelon Motion – ${t('tagline')}`,
+      title: ogTitle,
       description: t('description'),
+      images: [
+        {
+          url: `${baseUrl}/${lang}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: ogTitle,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Avelon Motion – ${t('tagline')}`,
+      title: ogTitle,
       description: t('description'),
+      images: [`${baseUrl}/${lang}/opengraph-image`],
     },
   };
 }
@@ -60,12 +80,47 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
     notFound();
   }
 
-  const messages = await getMessages();
+  const [messages, faqT] = await Promise.all([
+    getMessages({ locale: lang }),
+    getTranslations({ locale: lang, namespace: 'faq' }),
+  ]);
+
+  // Build FAQ items from translations for JSON-LD
+  const FAQ_COUNT = 8;
+  const faqItems = Array.from({ length: FAQ_COUNT }, (_, i) => ({
+    question: faqT(`q${i + 1}.question`),
+    answer:   faqT(`q${i + 1}.answer`),
+  }));
+
+  const orgSchema     = buildOrganizationSchema(lang);
+  const serviceSchema = buildServiceSchema(lang);
+  const faqSchema     = buildFaqSchema(faqItems);
+  const siteSchema    = buildWebSiteSchema();
 
   return (
-    <NextIntlClientProvider locale={lang} messages={messages}>
-      {children}
-      <CookieConsent />
-    </NextIntlClientProvider>
+    <>
+      {/* ── JSON-LD Structured Data ── */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <NextIntlClientProvider locale={lang} messages={messages}>
+        {children}
+        <CookieConsent />
+      </NextIntlClientProvider>
+    </>
   );
 }

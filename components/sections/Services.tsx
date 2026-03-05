@@ -148,12 +148,32 @@ export default function Services({ visibleSections }: ServicesProps) {
                 src={`/media/services-video${i === 1 ? '' : i}.mp4`}
                 className="absolute inset-0 w-full h-full object-cover"
                 autoPlay muted loop playsInline
-              />
-              {/* Gradient */}
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"
                 aria-hidden="true"
               />
+              {/* Gradient — megerősítve az átfedéshez */}
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/25 to-transparent pointer-events-none"
+                aria-hidden="true"
+              />
+
+              {/* Indexszám-híd — nagy ghost szám a videó-szöveg határán */}
+              <div
+                className="absolute bottom-0 right-6 pointer-events-none select-none"
+                aria-hidden="true"
+              >
+                <span
+                  className="block font-black text-white leading-none"
+                  style={{
+                    fontSize: 'clamp(7rem, 16vw, 16rem)',
+                    opacity: 0.07,
+                    mixBlendMode: 'overlay',
+                    letterSpacing: '-0.05em',
+                    lineHeight: 0.85,
+                  }}
+                >
+                  0{i}
+                </span>
+              </div>
 
               {/* Short animated label — max 1-2 words */}
               <VideoLabel text={t(`statement${i}`)} index={idx} />
@@ -168,10 +188,10 @@ export default function Services({ visibleSections }: ServicesProps) {
               </div>
             </div>
 
-            {/* Module text block */}
+            {/* Module text block — negatív margóval becsúszik a videó aljába */}
             <div
               ref={ref}
-              className="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-12 py-12 md:py-20 max-w-[1600px] mx-auto"
+              className="relative z-10 -mt-10 md:-mt-16 grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-12 py-12 md:py-20 max-w-[1600px] mx-auto"
             >
               {/* Left col */}
               <div className="md:col-span-4">
